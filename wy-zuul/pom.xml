@@ -27,7 +27,7 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        <!--添加RabbitMQ的配置依赖,消息总线-->
+        <!--注添加RabbitMQ的配置依赖,消息总线-->
        <!-- <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
@@ -37,6 +37,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
+
     </dependencies>
 
 </project>

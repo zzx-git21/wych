@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="wy-monitor" />
         <module name="wy-config" />
+        <module name="wy-zuul" />
         <module name="wy-common" />
         <module name="wy-eureka" />
-        <module name="wy-zuul" />
-        <module name="wy-monitor" />
       </profile>
     </annotationProcessing>
   </component>

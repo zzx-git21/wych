@@ -9,6 +9,11 @@ spring:
         enabled: true
         service-id: config-server
       fail-fast: true
+zuul:
+  prefix: /api # 添加路由前缀
+  retryable: true
+  routes:
+    user-service: /user/**
 eureka:
   client:
     service-url:

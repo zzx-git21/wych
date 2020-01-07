@@ -8,11 +8,17 @@
         <outputRelativeToContentRoot value="true" />
         <module name="wy-monitor" />
         <module name="wy-config" />
-        <module name="wy-zuul" />
+        <module name="wy-user-interface" />
         <module name="wy-common" />
+        <module name="wych-sms" />
+        <module name="wy-zuul" />
         <module name="wy-eureka" />
+        <module name="wy-user-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="wy-servce" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -20,7 +26,12 @@
       <module name="wy-config" options="-parameters" />
       <module name="wy-eureka" options="-parameters" />
       <module name="wy-monitor" options="-parameters" />
+      <module name="wy-servce" options="-parameters" />
+      <module name="wy-user" options="-parameters" />
+      <module name="wy-user-interface" options="-parameters" />
+      <module name="wy-user-service" options="-parameters" />
       <module name="wy-zuul" options="-parameters" />
+      <module name="wych-sms" options="-parameters" />
     </option>
   </component>
 </project>

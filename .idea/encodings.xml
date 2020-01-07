@@ -6,7 +6,12 @@
     <file url="file://$PROJECT_DIR$/wy-config" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/wy-eureka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/wy-monitor" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wy-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wy-user/wy-user-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wy-user/wy-user-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/wy-zuul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wych-sms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wych-sms" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

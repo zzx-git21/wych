@@ -14,6 +14,8 @@
         <module>wy-config</module>
         <module>wy-monitor</module>
         <module>wy-common</module>
+        <module>wy-user</module>
+        <module>wych-sms</module>
     </modules>
     <!--想让本项目成为spring-boot项目,怎么办?-->
     <parent>

@@ -9,8 +9,17 @@ spring:
         service-id: config-server
         enabled: true #开启配置服务功能
       fail-fast: true
+  security: #安全登录界面的用户名和密码
+    user:
+      name: admin
+      password: admin
 
 eureka:
+  instance:
+    health-check-url-path: /actuator/health #检查检查的接口路径
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
   client:
     service-url:
       #defaultZone: http://localhost:8761/eureka/

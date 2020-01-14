@@ -14,6 +14,10 @@ zuul:
   retryable: true
   routes:
     user-service: /user/**
+  ignored-patterns: /upload/**
+  ignored-services:
+    - upload-server
+#    upload-service: /upload/**
 eureka:
   client:
     service-url:

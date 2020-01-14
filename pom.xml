@@ -16,6 +16,8 @@
         <module>wy-common</module>
         <module>wy-user</module>
         <module>wych-sms</module>
+        <module>wlkg-upload</module>
+        <module>wy-appeal</module>
     </modules>
     <!--想让本项目成为spring-boot项目,怎么办?-->
     <parent>

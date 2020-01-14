@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="wy-monitor" />
-        <module name="wy-config" />
+        <module name="wy-appeal" />
         <module name="wy-user-interface" />
+        <module name="wy-config" />
         <module name="wy-common" />
-        <module name="wych-sms" />
+        <module name="wlkg-upload" />
         <module name="wy-zuul" />
         <module name="wy-eureka" />
+        <module name="wych-sms" />
         <module name="wy-user-service" />
       </profile>
     </annotationProcessing>
@@ -22,6 +24,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="wlkg-upload" options="-parameters" />
+      <module name="wy-appeal" options="-parameters" />
       <module name="wy-common" options="-parameters" />
       <module name="wy-config" options="-parameters" />
       <module name="wy-eureka" options="-parameters" />

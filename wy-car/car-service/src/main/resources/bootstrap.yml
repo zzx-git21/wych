@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: car-server
+  profiles:
+    active: dev
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      fail-fast: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wych
+    username: root
+    password: root
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:123@localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' #暴露所有端点,默认是info和health
+  endpoint:
+    health:
+      show-details: always #默认是never
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true

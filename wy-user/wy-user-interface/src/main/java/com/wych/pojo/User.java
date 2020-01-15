@@ -27,7 +27,6 @@ public class User {
     private String username;
     private  String email;
     private String company;
-    @Pattern(regexp = "^1[35678]\\d{9}$", message = "手机号格式不正确")
     private String referrerPhone;//推荐人手机号
     private  Integer companyId;
     private  String roleId;
@@ -42,6 +41,8 @@ public class User {
     private Integer age;
     private String wechat;
     private String qq;
+    @JsonIgnore
+    private String salt;// 密码的盐值
 
 
 

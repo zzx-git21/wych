@@ -52,6 +52,14 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
+    //登录
+    @GetMapping("/login")
+    public ResponseEntity<User> queryUser(@RequestParam("phone") String phone,
+                                          @RequestParam("password")String password){
+        User user = this.userService.queryUser(phone, password);
+        return ResponseEntity.ok(user);
+    }
+
 
     //完善注册信息
     //第一步回显用户信息

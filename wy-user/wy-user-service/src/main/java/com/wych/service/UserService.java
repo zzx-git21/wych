@@ -67,6 +67,7 @@ public class UserService {
 
         //- 2）生成盐
         String salt = CodecUtils.generateSalt();
+        user.setSalt(salt);
 
         //- 3）对密码加密
         user.setPassword(CodecUtils.md5Hex(user.getPassword(), salt));
@@ -115,5 +116,25 @@ public class UserService {
 
 
         return user;
+    }
+
+    //登录判断
+
+    public User queryUser(String phone, String password) {
+        User record=new User();
+        record.setPhone(phone);
+        User user = userMapper.selectOne(record);
+        System.out.println("user = " + user);
+        if (user == null) {
+            throw new WlkgException(ExceptionEnums.INVALID_USERNAME_PASSWORD);
+        }
+        // 校验密码
+        if (!user.getPassword().equals(CodecUtils.md5Hex(password, user.getSalt()))) {
+            throw new WlkgException(ExceptionEnums.INVALID_USERNAME_PASSWORD);
+        }
+        // 用户名密码都正确
+        return user;
+
+
     }
 }

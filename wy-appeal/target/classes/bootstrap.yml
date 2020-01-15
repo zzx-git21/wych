@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: appeal-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/wy?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  profiles:
+    active: dev
+  cloud:
+    config:
+      discovery:
+        service-id: config-server
+        enabled: true #开启配置服务功能
+      fail-fast: true
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://admin:123@localhost:8761/eureka/
+#actuator设置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #暴露所有端点,默认是info和health
+  endpoint:
+    health:
+      show-details: always #默认是never
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true

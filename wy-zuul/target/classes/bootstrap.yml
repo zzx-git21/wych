@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: zuul-server
+  profiles:
+    active: dev
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      fail-fast: true
+zuul:
+  prefix: /api # 添加路由前缀
+  retryable: true
+  routes:
+    user-server: /user/**
+    goods-server: /goods/**
+  sensitive-headers:    #禁止使用的头信息，设置为null，否则set-cookie无效
+  add-host-header: true #携带请求本身的host头信息
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:123@localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #暴露所有端点,默认是info和health
+  endpoint:
+    health:
+      show-details: always #默认是never

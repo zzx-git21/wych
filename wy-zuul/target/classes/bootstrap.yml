@@ -29,6 +29,10 @@ zuul:
   retryable: true
   routes:
     car-server: /car/**
+    user-service: /user/**
+  ignored-patterns: /upload/**
+  ignored-services:
+    - upload-server
   add-host-header: true
   sensitive-headers:
 ribbon:

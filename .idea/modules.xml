@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/wy-goods/wy-goods.iml" filepath="$PROJECT_DIR$/wy-goods/wy-goods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wy-goods/wy-goods-interface/wy-goods-interface.iml" filepath="$PROJECT_DIR$/wy-goods/wy-goods-interface/wy-goods-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wy-goods/wy-goods-service/wy-goods-service.iml" filepath="$PROJECT_DIR$/wy-goods/wy-goods-service/wy-goods-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/../wych-portal/wych-portal.iml" filepath="$PROJECT_DIR$/../wych-portal/wych-portal.iml" />
     </modules>
   </component>

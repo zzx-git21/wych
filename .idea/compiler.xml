@@ -6,18 +6,31 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="wy-config" />
-        <module name="wy-eureka" />
-        <module name="wy-zuul" />
         <module name="wy-monitor" />
+        <module name="wy-config" />
+        <module name="wy-order" />
+        <module name="wy-zuul" />
+        <module name="wy-eureka" />
+        <module name="wy-security" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="wy-config" target="1.8" />
+      <module name="wy-eureka" target="1.8" />
+      <module name="wy-monitor" target="1.8" />
+      <module name="wy-order" target="1.8" />
+      <module name="wy-security" target="1.8" />
+      <module name="wy-zuul" target="1.8" />
+      <module name="wych" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="wy-config" options="-parameters" />
       <module name="wy-eureka" options="-parameters" />
       <module name="wy-monitor" options="-parameters" />
+      <module name="wy-order" options="-parameters" />
+      <module name="wy-security" options="-parameters" />
       <module name="wy-zuul" options="-parameters" />
     </option>
   </component>

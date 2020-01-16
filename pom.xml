@@ -13,14 +13,14 @@
         <module>wy-zuul</module>
         <module>wy-config</module>
         <module>wy-monitor</module>
+        <module>wy-security</module>
+        <module>wy-order</module>
     </modules>
     <!--想让本项目成为spring-boot项目,怎么办?-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <!--<version>2.1.5.RELEASE</version>-->
-        <version>2.0.3.RELEASE</version>
-        <relativePath/>
+        <version>2.1.3.RELEASE</version>
     </parent>
 
     <properties>
@@ -34,7 +34,7 @@
         <lombok.version>1.16.20</lombok.version>
 
         <!--SpringCloud版本号F版,G版-->
-        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+<!--        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version> Greenwich-->
     </properties>
 
     <dependencyManagement>
@@ -42,12 +42,57 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
+                <version>Greenwich.RELEASE</version>
                 <!--<version>Camden.SR5</version>-->
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-        </dependencies>
+                <dependency>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>javax.servlet-api</artifactId>
+                    <version>3.1.0</version>
+                    <scope>provided</scope>
+                </dependency>
+
+                <dependency>
+                    <groupId>javax.interceptor</groupId>
+                    <artifactId>javax.interceptor-api</artifactId>
+                    <version>1.2</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>com.alibaba</groupId>
+                    <artifactId>fastjson</artifactId>
+                    <version>1.2.47</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok</artifactId>
+                    <version>1.18.0</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                    <version>5.1.47</version>
+                </dependency>
+
+
+                <dependency>
+                    <groupId>org.springframework.security</groupId>
+                    <artifactId>spring-security-jwt</artifactId>
+                    <version>1.0.10.RELEASE</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.springframework.security.oauth.boot</groupId>
+                    <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+                    <version>2.1.3.RELEASE</version>
+                </dependency>
+
+            </dependencies>
+
     </dependencyManagement>
 
     <dependencies>
@@ -74,13 +119,48 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
+        <finalName>${project.name}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>utf-8</encoding>
+                    <useDefaultDelimiters>true</useDefaultDelimiters>
+                </configuration>
             </plugin>
         </plugins>
     </build>

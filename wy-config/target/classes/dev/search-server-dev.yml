@@ -1,2 +1,7 @@
 server:
   port: 8792
+spring:
+  data:
+    elasticsearch:
+      cluster-name: my-elasticsearch
+      cluster-nodes: 192.168.206.122:9301
